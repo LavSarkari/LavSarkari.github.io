@@ -76,6 +76,15 @@ async function getInputValue(){
     createCode("social -a", "All my social networks.");
     createCode("clear", "Clean the terminal.");
     
+      
+  }
+  else if(value === "amlav"){
+    trueValue(value);
+    document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
+    document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
+    createText("Welcome master, this your AKIRA on your termial ask me anything to do!")
+      await delay(200);
+      
   }
   else if(value === "projects"){
     trueValue(value);
