@@ -75,7 +75,7 @@ async function getInputValue(){
     createCode("about me", "Who am i and what do i do.");
     createCode("social -a", "All my social networks.");
     createCode("clear", "Clean the terminal.");
-    
+    createCade("amlav", "Only for admin.")
       
   }
   else if(value === "amlav"){
