@@ -75,15 +75,7 @@ async function getInputValue(){
     createCode("about me", "Who am i and what do i do.");
     createCode("social -a", "All my social networks.");
     createCode("clear", "Clean the terminal.");
-    createCade("amlav", "Only for admin.")
-      
-  }
-  else if(value === "amlav"){
-    trueValue(value);
-    document.querySelectorAll("p").forEach(e => e.parentNode.removeChild(e));
-    document.querySelectorAll("section").forEach(e => e.parentNode.removeChild(e));
-    createText("Welcome master, this your AKIRA on your termial ask me anything to do!")
-      await delay(200);
+
       
   }
   else if(value === "projects"){
