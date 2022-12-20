@@ -91,7 +91,7 @@ async function getInputValue(){
     trueValue(value);
     createText("<a href='https://github.com/LavSarkari/' target='_blank'><i class='fab fa-github white'></i> github.com/LavSarkari</a>")
     createText("<a href='https://discord.gg/icecafe/' target='_blank'><i class='fab fa-discord white'></i> discord.gg/icecafe</a>")
-    createText("<a href='https://www.instagram.com/cyber_tantrik/' target='_blank'><i class='fab fa-instagram white'></i> instagram.com/its.me.sarkari</a>")
+    createText("<a href='https://www.instagram.com/cyber_tantrik/' target='_blank'><i class='fab fa-instagram white'></i> instagram.com/cyber_tantrik</a>")
   }
   else if(value === "social"){
     trueValue(value);
