@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>License Plate Replacement</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<style>
+    .output-container {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .error-message {
+        color: red;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1 class="my-4">License Plate Replacement</h1>
+    <form id="uploadForm" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="carImage">Car Image:</label>
+            <input type="file" class="form-control-file" id="carImage" name="carImage" accept="image/*" required>
+        </div>
+        <div class="form-group">
+            <label for="plateImage">Plate Image:</label>
+            <input type="file" class="form-control-file" id="plateImage" name="plateImage" accept="image/*" required>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="uploadImages()">Upload Images</button>
+    </form>
+    <div class="output-container" id="outputContainer" style="display: none">
+        <h2 class="my-4">Replaced License Plate</h2>
+        <img id="outputImage" class="img-fluid" src="" alt="Output Image">
+    </div>
+    <div class="error-message" id="errorMessage"></div>
+    <div id="loadingSpinner" class="spinner-border text-primary mt-3" role="status" style="display: none">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<script>
+function uploadImages() {
+    var carImage = document.getElementById("carImage").files[0];
+    var plateImage = document.getElementById("plateImage").files[0];
+
+    if (!carImage || !plateImage) {
+        document.getElementById("errorMessage").textContent = "Please select both images.";
+        return;
+    }
+
+    // Show loading spinner
+    document.getElementById("loadingSpinner").style.display = "block";
+
+    var formData = new FormData();
+    formData.append("car_image", carImage);
+    formData.append("plate_image", plateImage);
+
+    fetch("https://sarkari.pythonanywhere.com/upload/", {
+        method: "POST",
+        body: formData,
+    })
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
+    .then((data) => {
+        if (data.error) {
+            document.getElementById("errorMessage").textContent = data.error;
+        } else {
+            document.getElementById("errorMessage").textContent = "";
+            document.getElementById("outputContainer").style.display = "block";
+            document.getElementById("outputImage").src = "data:image/jpeg;base64," + data.image;
+        }
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+        document.getElementById("errorMessage").textContent = "An error occurred while processing the images.";
+    })
+    .finally(() => {
+        // Hide loading spinner
+        document.getElementById("loadingSpinner").style.display = "none";
+    });
+}
+</script>
+</body>
+</html>
