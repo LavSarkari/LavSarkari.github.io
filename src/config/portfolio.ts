@@ -45,7 +45,7 @@ export const portfolioConfig = {
       name: "Chess",
       description: "600+ ELO and grinding to improve! ♟️",
       icon: "♟️",
-      link: null // You can add chess.com profile later if you want
+      link: "https://www.chess.com/member/lavontop" // You can add chess.com profile later if you want
     },
     {
       name: "Photography", 

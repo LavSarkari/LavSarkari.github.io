@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import ConsoleMessage from '@/components/ConsoleMessage'
+import DynamicFavicon from '@/components/DynamicFavicon'
 import { portfolioConfig } from '@/config/portfolio'
 
 export const metadata: Metadata = {
@@ -32,6 +34,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className="bg-white dark:bg-zinc-900 text-zinc-900 dark:text-white">
         <ThemeProvider>
+          <ConsoleMessage />
+          <DynamicFavicon />
           {children}
         </ThemeProvider>
       </body>

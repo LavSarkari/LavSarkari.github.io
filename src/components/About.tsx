@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Target, Zap, Shield, Brain, Rocket } from 'lucide-react'
 import { portfolioConfig } from '@/config/portfolio'
+import Hobbies from './Hobbies'
 
 // Icon mapping for dynamic icons
 const iconMap = {
@@ -14,7 +15,7 @@ const iconMap = {
 }
 
 export default function About() {
-  const { personal, skills, currentFocus, journey } = portfolioConfig
+  const { personal, skills, currentFocus, journey, hobbies } = portfolioConfig
   
   // Calculate progress
   const completedPhases = journey.phases.filter(p => p.status === 'completed').length
@@ -210,6 +211,17 @@ export default function About() {
               })}
             </div>
           </div>
+        </motion.div>
+
+        {/* Hobbies Section */}
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <Hobbies />
         </motion.div>
       </div>
     </section>
