@@ -2,7 +2,15 @@
 
 import { useEffect, useRef } from 'react'
 
-export default function PortalEffect() {
+interface Particle {
+  x: number
+  y: number
+  radius: number
+  color: string
+  speed: number
+}
+
+export default function PortalEffect(): JSX.Element {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
@@ -12,14 +20,14 @@ export default function PortalEffect() {
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    const resize = () => {
+    const resize = (): void => {
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
     }
     resize()
     window.addEventListener('resize', resize)
 
-    let particles: { x: number; y: number; radius: number; color: string; speed: number }[] = []
+    const particles: Particle[] = []
     const colors = ['#805AD5', '#4299E1', '#38B2AC', '#9F7AEA']
 
     // Create particles
@@ -33,7 +41,11 @@ export default function PortalEffect() {
       })
     }
 
-    function animate() {
+    let animationFrameId: number
+
+    function animate(): void {
+      if (!ctx || !canvas) return
+
       ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
@@ -50,13 +62,16 @@ export default function PortalEffect() {
         ctx.fill()
       })
 
-      requestAnimationFrame(animate)
+      animationFrameId = requestAnimationFrame(animate)
     }
 
     animate()
 
     return () => {
       window.removeEventListener('resize', resize)
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId)
+      }
     }
   }, [])
 

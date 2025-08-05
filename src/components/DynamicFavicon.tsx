@@ -18,9 +18,9 @@ export default function DynamicFavicon() {
 
   useEffect(() => {
     // Create or get favicon link
-    let link = document.querySelector("link[rel='icon']")
+    let link = document.querySelector("link[rel='icon']") as HTMLLinkElement | null
     if (!link) {
-      link = document.createElement('link')
+      link = document.createElement('link') as HTMLLinkElement
       link.rel = 'icon'
       document.head.appendChild(link)
     }
