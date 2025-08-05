@@ -39,6 +39,22 @@ export const portfolioConfig = {
     "Automation and scripting projects"
   ],
 
+  // Hobbies & Interests
+  hobbies: [
+    {
+      name: "Chess",
+      description: "600+ ELO and grinding to improve! ♟️",
+      icon: "♟️",
+      link: null // You can add chess.com profile later if you want
+    },
+    {
+      name: "Photography", 
+      description: "Clicking random pics and capturing moments 📸",
+      icon: "📸",
+      link: "https://in.pinterest.com/kairavnotfound/heheh/"
+    }
+  ],
+
   // Social Links
   social: {
     github: "https://github.com/LavSarkari",
@@ -102,6 +118,14 @@ export const portfolioConfig = {
     title: "📬 Let's Connect",
     description: "Want to collaborate on some vibe coding, discuss CTFs, or talk about breaking things ethically? Hit me up! Always down to connect with fellow hackers and tech enthusiasts.",
     availability: "Open for collaborations & internships",
+    form: {
+      enabled: true,
+      title: "Send me a message",
+      subtitle: "Drop me a line and I'll get back to you soon!",
+      emailService: "formspree", // Using Formspree for no-backend solution
+      actionUrl: "https://formspree.io/f/xblkzkll", // You'll need to replace this
+      emailTo: "mail@lavsarkari.me"
+    },
     methods: [
       {
         name: "GitHub",

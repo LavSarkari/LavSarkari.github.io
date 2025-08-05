@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Mail, MessageCircle, Github, Linkedin, ExternalLink } from 'lucide-react'
 import { portfolioConfig } from '@/config/portfolio'
+import ContactForm from './ContactForm'
 
 // Icon mapping for dynamic contact icons
 const iconMap = {
@@ -51,7 +52,7 @@ export default function Contact() {
         </motion.h2>
 
         <motion.p 
-          className="text-center text-lg text-gray-600 dark:text-gray-300 mb-16 max-w-2xl mx-auto"
+          className="text-center text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -59,6 +60,18 @@ export default function Contact() {
         >
           {contact.description}
         </motion.p>
+
+        {contact.form.enabled && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="mb-16"
+          >
+            <ContactForm />
+          </motion.div>
+        )}
 
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
