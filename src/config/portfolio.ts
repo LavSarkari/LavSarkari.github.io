@@ -13,8 +13,8 @@ export const portfolioConfig = {
       completed: "Diploma in Information Technology (2024)"
     },
     bio: {
-      intro: "Hey, I'm Lav — a cybersecurity enthusiast and ethical hacker from India. Currently pursuing B.Tech CSE (2025) after completing my Diploma in Information Technology (2024).",
-      philosophy: "I build things through \"vibe coding\" — creating tools like meowcode (a meme programming language), Subdomain-Enumeration-Script, and hiddennexus. When I'm not coding, I'm diving into CTFs, bug bounties, and learning how to break the internet ethically."
+      intro: "Hey, I'm Lav - a cybersecurity enthusiast and ethical hacker from India. Currently pursuing B.Tech CSE (2025) after completing my Diploma in Information Technology (2024).",
+      philosophy: "I build things through \"vibe coding\" - creating tools like meowcode (a meme programming language), Subdomain-Enumeration-Script, and hiddennexus. When I'm not coding, I'm diving into CTFs, bug bounties, and learning how to break the internet ethically."
     }
   },
 
@@ -52,52 +52,51 @@ export const portfolioConfig = {
 
   // Journey/Roadmap Configuration
   journey: {
-    title: "🚀 My Cybersecurity Journey", // Easy to change!
-    subtitle: "From student to ethical hacking expert", // Optional subtitle
+    title: "Cybersecurity Roadmap",
+    subtitle: "Path from beginner to professional",
     phases: [
       {
         phase: "Phase 1",
-        title: "Academic Foundation", 
-        description: "Completing B.Tech CSE and building core skills",
-        status: "current", // "current", "completed", "upcoming"
+        title: "Education",
+        description: "Pursuing B.Tech in Computer Science and covering core subjects",
+        status: "current",
         target: "2024-2025",
-        icon: "shield" // shield, zap, target, brain, rocket
+        icon: "shield"
       },
       {
         phase: "Phase 2",
-        title: "Practical Experience",
-        description: "Internships, more CTFs, and advanced projects", 
+        title: "Practical Learning",
+        description: "CTFs, bug bounty, personal tools, open-source practice",
         status: "upcoming",
         target: "2025-2026",
         icon: "zap"
       },
       {
-        phase: "Phase 3", 
-        title: "Professional Entry",
-        description: "First cybersecurity role and certifications",
+        phase: "Phase 3",
+        title: "Industry Entry",
+        description: "Applying for entry-level cybersecurity roles and certifications",
         status: "upcoming",
-        target: "2026-2027", 
+        target: "2026-2027",
         icon: "target"
       },
       {
         phase: "Phase 4",
-        title: "Skill Specialization",
-        description: "Becoming expert in chosen security domains",
+        title: "Domain Focus",
+        description: "Choosing a specialization in security (web, AD, red team, etc.)",
         status: "upcoming",
         target: "2027-2029",
         icon: "brain"
       },
       {
         phase: "Phase 5",
-        title: "Career Growth", 
-        description: "Senior roles and thought leadership",
+        title: "Career Growth",
+        description: "Working in higher roles, contributing to the community",
         status: "upcoming",
         target: "2029+",
         icon: "rocket"
       }
     ]
   },
-
   // Contact Section
   contact: {
     title: "📬 Let's Connect",
